@@ -16,7 +16,7 @@ pipeline {
         sh 'echo hallo'
         sh 'echo $PATH'
         sh 'dotnet --version'
-        sh 'dotnet publish'
+        sh 'dotnet publish -p ./backend/projectname/'
         sh 'echo ende'
       }
     }
@@ -24,6 +24,9 @@ pipeline {
     stage('second stage') {
       steps {
         sh 'echo hallo'
+        dir('client') {
+            sh 'npm install'
+        }
         sh 'echo ende'
       }
     }
@@ -31,6 +34,9 @@ pipeline {
     stage('3 stage') {
       steps {
         sh 'echo hallo'
+        dir('client') {
+            sh 'ng build'
+        }
         sh 'echo ende'
       }
     }
