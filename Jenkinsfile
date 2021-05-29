@@ -16,7 +16,7 @@ pipeline {
         sh 'echo hallo'
         sh 'echo $PATH'
         sh 'dotnet --version'
-        sh 'dotnet build'
+        sh 'dotnet publish'
         sh 'echo ende'
       }
     }
