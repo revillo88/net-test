@@ -17,8 +17,10 @@ pipeline {
 
         dir('backend/projectname') {
           sh 'dotnet publish'
-          zip zipFile: 'client.zip', archive: false, dir: './bin/Debug/net5.0/publish/'
-          archiveArtifacts artifacts: 'client.zip', fingerprint: true
+          script {
+            zip zipFile: 'client.zip', archive: false, dir: './bin/Debug/net5.0/publish/'
+            archiveArtifacts artifacts: 'client.zip', fingerprint: true
+          }
         }
         sh 'echo ende'
       }
@@ -39,8 +41,10 @@ pipeline {
         sh 'echo hallo'
         dir('client') {
             sh 'ng build'
-            zip zipFile: 'gui.zip', archive: false, dir: './dist/project/'
-            archiveArtifacts artifacts: 'gui.zip', fingerprint: true
+            script {
+              zip zipFile: 'gui.zip', archive: false, dir: './dist/project/'
+              archiveArtifacts artifacts: 'gui.zip', fingerprint: true
+            }
         }
         sh 'echo ende'
       }
