@@ -14,9 +14,10 @@ pipeline {
     stage('init Project') {
       steps {
         sh 'echo hallo'
-        sh 'echo $PATH'
-        sh 'dotnet --version'
-        sh 'dotnet publish -p ./backend/projectname/'
+
+        dir('backend/projectname') {
+          sh 'dotnet publish'
+        }
         sh 'echo ende'
       }
     }
