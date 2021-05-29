@@ -4,16 +4,19 @@ pipeline {
       label 'master'
     }
   }
+
+  environment {
+    net = tool 'msnet'
+    PATH = "$net:$PATH"
+  }
+
   stages {
-    stage('asdddsad') {
+    stage('init Project') {
       steps {
         sh 'echo hallo'
         sh 'dotnet --version'
         sh 'ende'
       }
     }
-  }
-  environment {
-    asadde = 'adsada'
   }
 }
