@@ -14,6 +14,7 @@ pipeline {
     stage('init Project') {
       steps {
         sh 'echo hallo'
+        sh 'echo $PATH'
         sh 'dotnet --version'
         sh 'ende'
       }
