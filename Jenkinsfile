@@ -20,5 +20,19 @@ pipeline {
         sh 'echo ende'
       }
     }
+
+    stage('second stage') {
+      steps {
+        sh 'echo hallo'
+        sh 'echo ende'
+      }
+    }
+
+    stage('3 stage') {
+      steps {
+        sh 'echo hallo'
+        sh 'echo ende'
+      }
+    }
   }
 }
