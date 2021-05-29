@@ -6,8 +6,8 @@ pipeline {
   }
 
   environment {
-    net = tool 'msnet'
-    PATH = "$net:$PATH"
+    // net = tool 'msnet'
+    PATH = "$PATH"
   }
 
   stages {
@@ -16,7 +16,8 @@ pipeline {
         sh 'echo hallo'
         sh 'echo $PATH'
         sh 'dotnet --version'
-        sh 'ende'
+        sh 'dotnet build'
+        sh 'echo ende'
       }
     }
   }
