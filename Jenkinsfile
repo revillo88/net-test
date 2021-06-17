@@ -10,6 +10,8 @@ pipeline {
     PATH = "$PATH"
   }
 
+  
+
   stages {
     stage('init Project') {
       steps {
